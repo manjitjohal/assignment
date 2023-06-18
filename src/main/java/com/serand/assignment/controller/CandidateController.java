@@ -20,11 +20,9 @@ import java.util.List;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping("/candidates")
 public class CandidateController {
+
 	@Autowired
 	private CandidateRepository candidateRepository;
-
-	// ... existing endpoints
-
 	@PostMapping
 	public ResponseEntity<Candidate> createCandidate(@RequestBody Candidate candidate) {
 		Candidate savedCandidate = candidateRepository.save(candidate);
